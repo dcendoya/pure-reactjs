@@ -1,0 +1,33 @@
+.navBarCointainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.brandIconContainer {
+    padding: 30px;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.brandIcon {
+    text-decoration: none;
+    color: #000000;
+}
+
+.navList {
+    list-style-type: none;
+    margin: 0px;
+    padding: 30px;
+    justify-content: center;
+}
+
+.listItem {
+    display: inline;
+    padding: 10px;
+}
+
+.itemLink {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 300;
+}

@@ -1,24 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import NavBar from './components/header/NavBar';
+import Footer from './components/footer/Footer';
+import ItemListContainer from './components/home/ItemListContainer';
+import ItemDetailContainer from './components/producto/ItemDetailContainer';
+import Catalogo from './components/catalogo/Catalogo';
+import Cart from './components/cart/Cart';
+import CartContext from './components/CartContext';
+import Checkout from './components/checkout/Checkout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CartContext>
+        <BrowserRouter>
+          <NavBar />
+            <Switch>
+              {/* ruta home */}
+              <Route exact path="/">
+                <ItemListContainer greeting={'¡Hola! Conocé todos nuestros productos:'} />
+              </Route>
+
+              {/* ruta catálogo */}
+              <Route path="/catalogo/:catalogoId">
+                <Catalogo />
+              </Route>
+
+              {/* ruta item */}
+              <Route path="/item/:itemId">
+                <ItemDetailContainer />
+              </Route>
+
+              {/* ruta carrito */}
+              <Route exact path="/cart">
+                <Cart />
+              </Route>
+
+              {/* ruta checkout */}
+              <Route exact path="/checkout">
+                <Checkout />
+              </Route>
+            </Switch>
+          <Footer />
+        </BrowserRouter>
+      </CartContext>
+
+
+    </>
   );
 }
 
