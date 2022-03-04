@@ -17,7 +17,7 @@ Tiene una página principal con el listado completo de productos en stock, dos p
 
 Para correr el proyecto, primero se deben clonar o descargar los archivos. Luego, desde la consola instalar dependencias con el comando:
 
-`npm install`
+`npm install react-router-dom@5.2.0`
 
 Por último, correr:
 
